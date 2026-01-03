@@ -27,5 +27,5 @@ def test_predict_api():
     assert "loan_default_probability" in data
     assert "loan_status" in data
 
-    assert 0.0 <=data['laon_default_probability'] <= 1.0
+    assert 0.0 <=data['loan_default_probability'] <= 1.0
     assert data['loan_status'] in [0,1]
