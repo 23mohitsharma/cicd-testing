@@ -30,15 +30,15 @@ jobs:
         - name: Docker Hub Login
           uses : docker/login-activate@v3
           with:
-            username: ${{secrets.DOCKER_USERNAME}}
-            password: ${{secrets.DOCKER_PASSWORD}}
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
 
         - name: Build Docker Image
           run: |
-            docker built -t ${{secrets.DOCKER_USERNAME}}/loan-backend:latest backend
+            docker build -t ${{ secrets.DOCKER_USERNAME }}/loan-backend:latest backend
         
         - name: Push
           run : |
-            docker push ${{secrets.DOCKER_USERNAME}}/loan-backend:latest
+            docker push ${{ secrets.DOCKER_USERNAME }}/loan-backend:latest
 
 
